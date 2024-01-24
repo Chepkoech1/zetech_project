@@ -1,5 +1,6 @@
+// src/pages/CartPage.js
 import React from 'react';
-import Cart from '../components/customer/Cart';
+import Cart from '../components/customer/Cart';  // Update the import path
 
 const CartPage = () => {
   return (

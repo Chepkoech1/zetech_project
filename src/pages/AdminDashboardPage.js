@@ -1,5 +1,6 @@
+// src/pages/AdminDashboardPage.js
 import React from 'react';
-import AdminDashboard from '../components/admin/AdminDashboard';
+import AdminDashboard from '../components/admin/AdminDashboard';  // Update the import path
 
 const AdminDashboardPage = () => {
   return (
