@@ -1,24 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+import HomePage from './pages/HomePage';
+import SignUpPage from './pages/SignUpPage';
+import LoginPage from './pages/LoginPage';
+import ProductPage from './pages/ProductPage';
+import CartPage from './pages/CartPage';
+// import CheckoutPage from './pages/CheckoutPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/signup" component={SignUpPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/products" component={ProductPage} />
+          <Route path="/cart" component={CartPage} />
+          {/* <Route path="/checkout" component={CheckoutPage} /> */}
+          <Route path="/admin/dashboard" component={AdminDashboardPage} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
